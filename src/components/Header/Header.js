@@ -166,73 +166,122 @@ const DropdownMenu2 = ({ title, menuItems }) => {
 //   );
 // };
 
-const servicesMenuItems = [
-  { label: "System Administrator Services", path: "/services/system-admin" },
-  { label: "Website & App Development", path: "/services/web-app" },
-  { label: "Email Services", path: "/services/email" },
-  { label: "IT Help Desk Management", path: "/services/it-helpdesk" },
-  { label: "Network & Security Services", path: "/services/network" },
-  // { label: "Windows Server Management", path: "/services/windows-server" },
-  { label: "Server Management", path: "/services/server" },
-  { label: "Desktop & Laptop Management", path: "/services/desktop" },
-  {
-    label: "Managed AMC of IT Services",
-    path: "/services/contract",
-  },
-];
+const featuresMenuItems = [
+    {
+      label: "Services",
+      data: [
+        {
+          label: "Website & App Development",
+          path: "/services/web-app",
+        },
+        {
+          label: "Desktop & Laptop Management",
+          path: "/services/desktop",
+        },
+        {
+          label: "Managed AMC of IT Services",
+          path: "/services/contract",
+        },
+      ],
+    },
+    {
+      label: "Products",
+      data: [
+        {
+          label: "Moodle LMS",
+          path: "/product/LMS",
+        },
+        {
+          label: "Roombr",
+          path: "/product/room",
+        },
+        {
+          label: "Cyber Lab",
+          path: "/product/cyber",
+        },
+        {
+          label: "Artificial Intelligence",
+          path: "/product/AI",
+        },
+        {
+          label: "Contact Center",
+          path: "/product/contact",
+        },
+        {
+          label: "Recruitment Software",
+          path: "/product/recruitment",
+        },
+      ],
+    },
+      ];
 
-const productsMenuItems = [
-  {
-    label: "Education Solutions",
-    data: [
-      {
-        label: "Moodle LMS",
-        path: "/product/LMS",
-      },
-      {
-        label: "On-screen marking software",
-        path: "/product/screen-marking",
-      },
-      {
-        label: " Typing Software",
-        path: "/product/typing",
-      },
-      {
-        label: "Roombr",
-        path: "/product/room",
-      },
-      {
-        label: "Cyber Lab",
-        path: "/product/cyber",
-      },
-    ],
-  },
-  {
-    label: "Business Solutions",
-    data: [
-      {
-        label: "Artificial Intelligence",
-        path: "/product/AI",
-      },
-      {
-        label: "Contact Center",
-        path: "/product/contact",
-      },
-      {
-        label: "Event Management Software",
-        path: "/product/event",
-      },
-      {
-        label: "Recruitment Software",
-        path: "/product/recruitment",
-      },
-      {
-        label: "Video Conferencing System",
-        path: "/product/video",
-      },
-    ],
-  },
-];
+// const servicesMenuItems = [
+//   { label: "System Administrator Services", path: "/services/system-admin" },
+//   { label: "Website & App Development", path: "/services/web-app" },
+//   { label: "Email Services", path: "/services/email" },
+//   { label: "IT Help Desk Management", path: "/services/it-helpdesk" },
+//   { label: "Network & Security Services", path: "/services/network" },
+//   // { label: "Windows Server Management", path: "/services/windows-server" },
+//   { label: "Server Management", path: "/services/server" },
+//   { label: "Desktop & Laptop Management", path: "/services/desktop" },
+//   {
+//     label: "Managed AMC of IT Services",
+//     path: "/services/contract",
+//   },
+// ];
+
+// const productsMenuItems = [
+//   {
+//     label: "Education Solutions",
+//     data: [
+//       {
+//         label: "Moodle LMS",
+//         path: "/product/LMS",
+//       },
+//       {
+//         label: "On-screen marking software",
+//         path: "/product/screen-marking",
+//       },
+//       {
+//         label: " Typing Software",
+//         path: "/product/typing",
+//       },
+//       {
+//         label: "Roombr",
+//         path: "/product/room",
+//       },
+//       {
+//         label: "Cyber Lab",
+//         path: "/product/cyber",
+//       },
+//     ],
+//   },
+//   {
+//     label: "Business Solutions",
+//     data: [
+//       {
+//         label: "Artificial Intelligence",
+//         path: "/product/AI",
+//       },
+//       {
+//         label: "Contact Center",
+//         path: "/product/contact",
+//       },
+//       {
+//         label: "Event Management Software",
+//         path: "/product/event",
+//       },
+//       {
+//         label: "Recruitment Software",
+//         path: "/product/recruitment",
+//       },
+//       {
+//         label: "Video Conferencing System",
+//         path: "/product/video",
+//       },
+//     ],
+//   },
+// ];
 const solutionsMenuItems = [
   {
     label: "Information Security Solutions",
@@ -337,17 +386,21 @@ const Header = () => {
               <Link to="/about">About Us</Link>
             </div>
 
-            <div className="mx-2 cursor-pointer px-2 font-syne text-quaternary transition-all duration-300 ease-in-out hover:underline">
+            {/* <div className="mx-2 cursor-pointer px-2 font-syne text-quaternary transition-all duration-300 ease-in-out hover:underline">
               <DropdownMenu title="Services" menuItems={servicesMenuItems} />
+            </div> */}
+
+            <div className="mx-2 cursor-pointer px-2 font-syne text-quaternary transition-all duration-300 ease-in-out hover:underline">
+            <DropdownMenu2 title="Features" menuItems={featuresMenuItems} />
             </div>
 
             <div className="mx-2 cursor-pointer px-2 font-syne text-quaternary transition-all duration-300 ease-in-out hover:underline">
               <DropdownMenu2 title="Solutions" menuItems={solutionsMenuItems} />
             </div>
 
-            <div className="mx-2 cursor-pointer px-2 font-syne text-quaternary transition-all duration-300 ease-in-out hover:underline">
+            {/* <div className="mx-2 cursor-pointer px-2 font-syne text-quaternary transition-all duration-300 ease-in-out hover:underline">
               <DropdownMenu2 title="Products" menuItems={productsMenuItems} />
-            </div>
+            </div> */}
 
             <div className="mx-2 cursor-pointer px-2 font-syne text-quaternary transition-all duration-300 ease-in-out hover:underline">
               <Link to="/blog">Blog</Link>
@@ -376,7 +429,7 @@ const Header = () => {
             <li className="my-2 text-center">
               <Link to="/about">About Us</Link>
             </li>
-            <li className="my-2 text-center">
+            {/* <li className="my-2 text-center">
               <Menu>
                 <MenuButton
                   p="10px"
@@ -386,8 +439,8 @@ const Header = () => {
                   _hover={{ bg: "gray.400" }}
                   _expanded={{ bg: "gray.400" }}
                   _focus={{ boxShadow: "outline" }}
-                >
-                  Services <ChevronDownIcon color={"#015AAA"} w={4} h={4} />
+                > */}
+                  {/* Services <ChevronDownIcon color={"#015AAA"} w={4} h={4} />
                 </MenuButton>
                 <MenuList>
                   <MenuItem>
@@ -421,7 +474,7 @@ const Header = () => {
                       Network and Security Services
                     </Link>
                   </MenuItem>
-                  <MenuDivider />
+                  <MenuDivider /> */}
 
                   {/* <MenuItem>
                     <Link to="/services/windows-server">
@@ -430,7 +483,7 @@ const Header = () => {
                   </MenuItem>
                   <MenuDivider /> */}
 
-                  <MenuItem>
+                  {/* <MenuItem>
                     <Link to="/services/desktop">
                       Desktop & Laptop Management
                     </Link>
@@ -448,8 +501,8 @@ const Header = () => {
                     </Link>
                   </MenuItem>
                 </MenuList>
-              </Menu>
-            </li>
+              </Menu> */}
+            {/* </li> */}
 
             {/* <li className="my-2 text-center">
               <Menu>
@@ -488,10 +541,10 @@ const Header = () => {
                   _expanded={{ bg: "gray.400" }}
                   _focus={{ boxShadow: "outline" }}
                 >
-                  Products <ChevronDownIcon color={"#015AAA"} w={4} h={4} />
+                  Features <ChevronDownIcon color={"#015AAA"} w={4} h={4} />
                 </MenuButton>
                 <MenuList>
-                  {productsMenuItems.map((item, index) => (
+                  {featuresMenuItems && featuresMenuItems.map((item, index) => (
                     <React.Fragment key={index}>
                       <Accordion allowToggle className="w-[20rem]">
                         <AccordionItem>
@@ -503,7 +556,7 @@ const Header = () => {
                           </AccordionButton>
 
                           <AccordionPanel className="w-full flex flex-col p-0 m-0">
-                            {item.data.map((i, index) => (
+                            {item.data && item.data.map((i, index) => (
                               <Link
                                 key={`${i.label}_${index}`}
                                 className="py-2 my-1 hover:bg-gray-100"
